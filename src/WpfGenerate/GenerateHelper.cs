@@ -10,7 +10,7 @@ namespace Yibi.WpfGenerate
         private const string _sourceDefault = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private const string _sourceStrong = "`~!@#$%^&*()-_=+[]{}\\|;:'\",<.>/?";
         private static List<char> _sourceDefaultDatas => _sourceDefault.ToCharArray().ToList();
-        private static int _sourceDefaultLength = _sourceDefault.Length;
+        private static List<char> _sourceStrongDatas => (_sourceDefault+_sourceStrong).ToCharArray().ToList();
 
         public static string CreateGenerateCode(PasswordType passwordType)
         {
@@ -24,10 +24,7 @@ namespace Yibi.WpfGenerate
                     n = 20;
                     break;
                 case PasswordType.Stronger:
-                    var strongSource = _sourceDefault + _sourceStrong;
-
-
-                    datas = strongSource.ToList<char>();
+                    datas = _sourceStrongDatas;
                     n = 30;
                     break;
                 default:
