@@ -46,9 +46,11 @@ namespace Yibi.WpfGenerate
                 rng.GetBytes(bytes);
             }
 
+            var itemLength = datas.Count;
+
             foreach (var item in bytes)
             {
-                var index = item % datas.Count;
+                var index = item % itemLength;
 
                 yield return datas[index];
             }
