@@ -1,0 +1,33 @@
+﻿<Window x:Class="Yibi.WpfGenerate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yibi.WpfGenerate"
+        mc:Ignorable="d"
+        Title="云途密码生成器" Height="240" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Margin="20">
+            <RadioButton Name="rbtnDefaultType" GroupName="rbtnCodeType" Checked="RadioButton_Checked" IsChecked="True" Margin="0 0 0 10" Content="默认强度（20位数字和大小写字母）" />
+            <RadioButton Name="rbtnStrongType" GroupName="rbtnCodeType" Checked="RadioButton_Checked" Margin="0 0 0 10" Content="加强强度（30位数字、大小写字母和所有合法路径字符）" />
+
+            <Grid Width="340" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lbCodeText" Content="随机数：" />
+                <TextBox x:Name="txtCode" Grid.Column="1" Height="23" Margin="0 0 10 0" VerticalContentAlignment="Center" IsReadOnly="True" FontFamily="Consolas"/>
+
+                <Button x:Name="button" Grid.Row="1" Grid.ColumnSpan="2" Height="33" Background="LightSeaGreen"  Foreground="White" BorderBrush="Transparent" Margin="0 20 0 0" Content="重新生成" Click="Button_Click"/>
+            </Grid>
+            
+        </StackPanel>
+        
+
+    </Grid>
+</Window>
